@@ -36,8 +36,8 @@ static void hands_update_proc(Layer *layer, GContext *ctx) {
   GRect bounds = layer_get_bounds(layer);
   GPoint center = grect_center_point(&bounds);
   //int16_t second_hand_length = bounds.size.w / 2;
-  int dow_length  = 40;
-  int fuel_length = 40;
+  int dow_length  = 42;
+  int fuel_length = 42;
   int hour_length = 32;
   static GRect dow_to_frame, dow_from_frame, hour_to_frame, hour_from_frame, fuel_to_frame, fuel_from_frame;
   static PropertyAnimation *s_dow_animation, *s_hour_animation, *s_fuel_animation;
@@ -62,7 +62,7 @@ static void hands_update_proc(Layer *layer, GContext *ctx) {
   dow_from_frame  = GRect(dow_old_x, dow_old_y, 39,37);
   dow_to_frame    = GRect(dow_x, dow_y,39,37);
   s_dow_animation = property_animation_create_layer_frame((Layer *)s_dow_layer, &dow_from_frame, &dow_to_frame);
-  animation_set_duration((Animation *)s_dow_animation,1000);
+  animation_set_duration((Animation *)s_dow_animation,2000);
   animation_set_handlers((Animation*) s_dow_animation, (AnimationHandlers) {
     .stopped = (AnimationStoppedHandler) animation_stopped,
   }, NULL);
@@ -73,7 +73,7 @@ static void hands_update_proc(Layer *layer, GContext *ctx) {
   hour_from_frame  = GRect(hour_old_x, hour_old_y, 67,67);
   hour_to_frame    = GRect(hour_x, hour_y,67,67);
   s_hour_animation = property_animation_create_layer_frame((Layer *)s_hour_layer, &hour_from_frame, &hour_to_frame);
-  animation_set_duration((Animation *)s_hour_animation,1000);
+  animation_set_duration((Animation *)s_hour_animation,2000);
   animation_set_handlers((Animation*) s_hour_animation, (AnimationHandlers) {
     .stopped = (AnimationStoppedHandler) animation_stopped,
   }, NULL);
@@ -84,7 +84,7 @@ static void hands_update_proc(Layer *layer, GContext *ctx) {
   fuel_from_frame  = GRect(fuel_old_x, fuel_old_y, 36,17);
   fuel_to_frame    = GRect(fuel_x, fuel_y,36,17);
   s_fuel_animation = property_animation_create_layer_frame((Layer *)s_fuel_layer, &fuel_from_frame, &fuel_to_frame);
-  animation_set_duration((Animation *)s_fuel_animation,1000);
+  animation_set_duration((Animation *)s_fuel_animation,2000);
   animation_set_handlers((Animation*) s_fuel_animation, (AnimationHandlers) {
     .stopped = (AnimationStoppedHandler) animation_stopped,
   }, NULL);
@@ -111,7 +111,7 @@ static void hands_update_proc(Layer *layer, GContext *ctx) {
   gpath_draw_filled(ctx, s_week_arrow);
   gpath_draw_outline(ctx, s_week_arrow);
   
-  gpath_move_to(s_fuel_arrow, GPoint(fuel_x+18,fuel_y+8));
+  gpath_move_to(s_fuel_arrow, GPoint(fuel_x+18,fuel_y+16));
   graphics_context_set_fill_color(ctx, GColorFolly);
   gpath_rotate_to(s_fuel_arrow, fuel_angle);
   gpath_draw_filled(ctx, s_fuel_arrow);
