@@ -1,0 +1,54 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "kristof.willen@gmail.com",
+    "longName": "Pressence",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/bg-dow.png",
+                "name": "IMAGE_BG_DOW",
+                "type": "png"
+            },
+            {
+                "file": "images/bg-hour-trans.png",
+                "name": "IMAGE_BG_HOUR_TRANS",
+                "type": "png"
+            },
+            {
+                "file": "images/bg.png",
+                "name": "IMAGE_BG_BACKGROUND",
+                "type": "png"
+            },
+            {
+                "file": "images/bg-fuel.png",
+                "name": "IMAGE_BG_FUEL",
+                "type": "png"
+            },
+            {
+                "file": "images/pressence-icon.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/pres-bg.png",
+                "name": "IMAGE_BACKGROUND",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Pressence",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "20b7aa79-17ba-4cec-8fc1-c1b7dece12ea",
+    "versionLabel": "0.9",
+    "watchapp": {
+        "watchface": true
+    }
+}
