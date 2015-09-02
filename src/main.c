@@ -49,7 +49,8 @@ static void hands_update_proc(Layer *layer, GContext *ctx) {
   
   //int32_t second_angle = (TRIG_MAX_ANGLE * t->tm_sec / 90 - (TRIG_MAX_ANGLE/3)) % TRIG_MAX_ANGLE;
   int32_t minute_angle = TRIG_MAX_ANGLE * t->tm_min/60;
-  int32_t hour_angle   = (TRIG_MAX_ANGLE * (t->tm_hour%12 + t->tm_min/60)/12) % TRIG_MAX_ANGLE;
+  //int32_t hour_angle   = (TRIG_MAX_ANGLE * (t->tm_hour%12 + t->tm_min / 60) / 12) % TRIG_MAX_ANGLE;
+  int32_t hour_angle = (TRIG_MAX_ANGLE * (((t->tm_hour % 12) * 6) + (t->tm_min / 10))) / (12 * 6);
   int32_t week_angle   = ((TRIG_MAX_ANGLE * t->tm_wday / 7) - TRIG_MAX_ANGLE/16)%TRIG_MAX_ANGLE;
   int32_t fuel_angle   = ((TRIG_MAX_ANGLE / 3 * batteryLevel / 100) + (TRIG_MAX_ANGLE * 300/360)) % TRIG_MAX_ANGLE;
   

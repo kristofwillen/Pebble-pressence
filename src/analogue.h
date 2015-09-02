@@ -8,27 +8,27 @@ static const GPathInfo MINUTE_HAND_POINTS = {
     {-5, 0 },
     { 0, 10 },
     { 5, 0 },
-    {2,-60},
-    {-2,-60}  
+    {1,-60},
+    {-1,-60}  
    }
 };
 
 static const GPathInfo HOUR_HAND_POINTS = {
   5, (GPoint []){
-    {-4, 0},
+    {-5, 0},
     {0, 8},
-    {4, 0},
-    {1,-30},
-    {-1,-30}
+    {5, 0},
+    {1,-32},
+    {-1,-32}
   }
 };
 
 static const GPathInfo FUEL_HAND_POINTS = {
   4, (GPoint []){
-    {-5, 0},
+    {-4, 0},
     {0, 5},
-    {5, 0},
-    {0,-25}
+    {4, 0},
+    {0,-22}
   }
 };
 
@@ -37,6 +37,6 @@ static const GPathInfo WEEK_HAND_POINTS = {
     {-5, 0},
     {0, 5},
     {5, 0},
-    {0,-25}
+    {0,-22}
   }
 };
